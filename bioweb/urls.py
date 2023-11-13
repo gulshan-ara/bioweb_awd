@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    # dispatching user request and serving the genedata app in the root path
     path('', include('genedata.urls')),
     path('admin/', admin.site.urls),
 ]
