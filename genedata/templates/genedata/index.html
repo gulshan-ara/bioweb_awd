@@ -3,11 +3,20 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Gene Data</title>
+		<title>BioWeb</title>
 	</head>
 	<body>
-    <!-- django templating language -->
-		<p>Show table</p>
-		<p>{{ data.gene_id }}</p>
+		<!-- django templating language -->
+		<h1>Dr. Bucharia Genes List</h1>
+		<table>
+			<tr>
+				<th>Gene Id</th>
+			</tr>
+			{% for gene in genes %}
+			<tr>
+				<td><a href="/gene/{{gene.pk}}">{{ gene }} </a></td>
+			</tr>
+			{% endfor %}
+		</table>
 	</body>
 </html>
