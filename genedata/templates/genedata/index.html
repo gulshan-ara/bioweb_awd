@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>BioWeb</title>
-	</head>
-	<body>
-		<!-- django templating language -->
-		<h1>Dr. Bucharia Genes List</h1>
-		<table>
-			<tr>
-				<th>Gene Id</th>
-			</tr>
-			{% for gene in genes %}
-			<tr>
-				<td><a href="/gene/{{gene.pk}}">{{ gene }} </a></td>
-			</tr>
-			{% endfor %}
-		</table>
-	</body>
-</html>
+{% extends "./base.html" %} 
+{% block content %}
+<!-- django templating language -->
+<h1>Dr. Bucharia Genes List</h1>
+<table>
+	<tr>
+		<th>Gene Id</th>
+	</tr>
+	{% for gene in genes %}
+	<tr>
+		<td><a href="/gene/{{gene.pk}}">{{ gene }} </a></td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}
